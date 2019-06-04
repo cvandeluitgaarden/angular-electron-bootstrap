@@ -9,7 +9,7 @@ electron_1.app.on('activate', function () {
     }
 });
 function createWindow() {
-    win = new electron_1.BrowserWindow({ width: 800, height: 600 });
+    win = new electron_1.BrowserWindow({ width: 620, height: 350, frame: false });
     win.loadURL('http://localhost:4200');
     win.webContents.openDevTools();
     win.on('closed', function () {

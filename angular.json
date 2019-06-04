@@ -23,7 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/sass/default.scss"
             ],
             "scripts": []
           },
@@ -114,6 +114,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "ea-app"
+    }
+  },
+  "defaultProject": "ea-app",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

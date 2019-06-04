@@ -6,10 +6,12 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:css": "node-sass ./src/sass -o ./dist/ea-app",
+    "minify:css": "uglifycss --uglyComments ./dist/ea-app/default.css > ./dist/ea-app/default.min.css",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "electron": "ng build --base-href ./ && tsc --p . &&  npm-run-all -p ng:serve electron:serve",
+    "electron": "ng build --base-href ./ && npm run build:css && npm run minify:css && tsc --p . &&  npm-run-all -p ng:serve electron:serve",
     "ng:serve": "ng serve",
     "electron:serve-tsc": "tsc -p tsconfig-serve.json",
     "electron:serve": "wait-on http-get://localhost:4200/ && npm run electron:serve-tsc && electron . --serve"
@@ -26,6 +28,7 @@
     "@angular/router": "~8.0.0",
     "@types/electron": "^1.6.10",
     "bootstrap": "^4.3.1",
+    "c": "^0.1.0",
     "jquery": "^3.4.1",
     "npm-run-all": "^4.1.5",
     "propper": "^1.0.3",
@@ -41,6 +44,7 @@
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
+    "@types/node-sass": "^4.11.0",
     "codelyzer": "^5.0.0",
     "electron": "5.0.2",
     "jasmine-core": "~3.4.0",
@@ -50,10 +54,12 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "node-sass": "^4.12.0",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3",
+    "uglifycss": "0.0.29",
     "wait-on": "^3.2.0"
   }
 }

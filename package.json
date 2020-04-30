@@ -29,7 +29,7 @@
     "@types/electron": "^1.6.10",
     "bootstrap": "^4.3.1",
     "c": "^0.1.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "npm-run-all": "^4.1.5",
     "propper": "^1.0.3",
     "rxjs": "~6.4.0",
